@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<article class="pt-16 pb-24">
+    <div class="mx-auto max-w-3xl px-6">
+        <!-- Title + Meta -->
+        <header class="mb-6">
+            <p class="text-xs text-white/50">
+                {% assign cat = page.categories | first | default: "General" %}
+                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">{{ cat }}</span>
+                <span class="mx-2 text-white/30">•</span>
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%b %d, %Y" }}
+                </time>
+            </p>
+
+            <h1 class="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-white/90">
+                {{ page.title }}
+            </h1>
+
+            <!-- {% if page.description %}
+            <p class="mt-3 text-white/60 leading-relaxed">
+                {{ page.description }}
+            </p>
+            {% endif %} -->
+        </header>
+
+        <!-- Featured image -->
+        {% if page.image %}
+        <figure class="mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" class="w-full object-cover"
+                loading="eager" />
+        </figure>
+        {% endif %}
+
+        <!-- Content -->
+        <div class="prose prose-invert prose-zinc max-w-none">
+            {{ content }}
+        </div>
+
+        <!-- Tags -->
+        {% if page.tags and page.tags.size > 0 %}
+        <div class="mt-10 flex flex-wrap gap-2">
+            {% for tag in page.tags %}
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+                #{{ tag }}
+            </span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</article>
+
+<style>
+    .prose p {
+        font-size: 18px;
+        padding-bottom: 16px;
+    }
+</style>

@@ -1,0 +1,143 @@
+---
+layout: default
+title: Insights
+description: Thoughts, lessons, and actionable notes.
+permalink: /insights/
+---
+
+<section class="pt-16 pb-24">
+    <div class="mx-auto max-w-6xl px-6">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl sm:text-6xl text-amber-400 font-black tracking-tight flex items-center gap-2">
+                Insights
+                <i class="bi bi-lightbulb text-3xl sm:text-5xl"></i>
+            </h1>
+
+            <p class="mt-2 text-white/70 text-lg">
+                Thoughts, lessons, and actionable notes.
+            </p>
+
+            <p class="mt-2 text-white/60">
+                Personal growth, faith, tech, and whatever helps young minds grow spiritually, mentally, and
+                technically.
+            </p>
+
+            <!-- Search (client-side) -->
+            <div class="mt-6">
+                <div class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                    <span class="text-white/50">🔎</span>
+                    <input id="insightsSearch" type="search" placeholder="Search insights..."
+                        class="w-full bg-transparent text-white/80 placeholder:text-white/40 outline-none" />
+                </div>
+                <p class="mt-2 text-xs text-white/40">
+                    Tip: Search filters what’s already loaded on this page.
+                </p>
+            </div>
+        </div>
+
+        <!-- Content grid -->
+        <div class="grid gap-8 lg:grid-cols-12">
+            <!-- Posts -->
+            <div class="lg:col-span-8">
+                <div id="postsGrid" class="grid gap-6 sm:grid-cols-2">
+                    {% assign posts_sorted = site.posts %}
+
+                    {% for post in posts_sorted %}
+                    {% assign cat = post.categories | first | default: "General" %}
+                    {% assign words = post.content | strip_html | number_of_words %}
+                    {% assign minutes = words | divided_by: 200 %}
+                    {% if minutes < 1 %}{% assign minutes=1 %}{% endif %} <article
+                        class="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/7 transition"
+                        data-title="{{ post.title | downcase | escape }}"
+                        data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
+                        data-cat="{{ cat | downcase | escape }}">
+                        <a href="{{ post.url | relative_url }}" class="block">
+                            {% if post.image %}
+                            <img src="{{ post.image | relative_url }}" alt="" loading="lazy"
+                                class="h-44 w-full object-cover" />
+                            {% else %}
+                            <div class="h-44 w-full bg-gradient-to-br from-white/10 to-transparent"></div>
+                            {% endif %}
+                        </a>
+
+                        <div class="p-4">
+                            <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-white/60">
+                                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                                    {{ cat }}
+                                </span>
+                                <span class="text-white/30">•</span>
+                                <time datetime="{{ post.date | date_to_xmlschema }}">
+                                    {{ post.date | date: "%b %d, %Y" }}
+                                </time>
+                                <span class="text-white/30">•</span>
+                                <span>{{ minutes }} min read</span>
+                            </div>
+
+                            <h2 class="text-lg font-bold leading-snug text-white/90 group-hover:text-white transition">
+                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                            </h2>
+
+                            <p class="mt-2 text-sm text-white/60 leading-relaxed">
+                                {{ post.excerpt | strip_html | truncatewords: 22 }}
+                            </p>
+
+                            <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
+                                href="{{ post.url | relative_url }}">
+                                Read article <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                        </article>
+                        {% endfor %}
+                </div>
+
+                <!-- Empty state -->
+                <div id="emptyState" class="hidden mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+                    <h2 class="text-lg font-bold text-white/90">No posts found</h2>
+                    <p class="mt-1 text-sm text-white/60">Try a different keyword.</p>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="lg:col-span-4 space-y-4">
+                <!-- Categories -->
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <h3 class="text-sm font-bold text-white/80">Categories</h3>
+
+                    {% assign categories = site.categories %}
+                    <ul class="mt-4 space-y-2 text-sm">
+                        {% for c in categories %}
+                        {% assign name = c[0] %}
+                        {% assign count = c[1].size %}
+                        <li class="flex items-center justify-between gap-3">
+                            <a class="text-white/70 hover:text-white" href="{{ '/insights/#' | relative_url }}">
+                                {{ name }}
+                            </a>
+                            <span class="text-xs text-white/40">{{ count }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Recent posts -->
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <h3 class="text-sm font-bold text-white/80">Recent posts</h3>
+
+                    <ul class="mt-4 divide-y divide-white/10">
+                        {% for post in site.posts limit:5 %}
+                        <li class="py-3">
+                            <a class="block text-sm font-semibold text-white/70 hover:text-white"
+                                href="{{ post.url | relative_url }}">
+                                {{ post.title }}
+                            </a>
+                            <p class="mt-1 text-xs text-white/40">
+                                {{ post.date | date: "%b %d, %Y" }}
+                            </p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

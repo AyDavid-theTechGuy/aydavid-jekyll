@@ -1,0 +1,73 @@
+<header id="siteHeader" class="sticky top-0 z-50 bg-transparent">
+    <nav class="mx-auto max-w-6xl px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Brand -->
+            <a href="{{ '/' | relative_url }}" class="flex items-center gap-2">
+                <span
+                    class="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 overflow-hidden">
+                    <img src="{{ '/assets/img/aydavid_navimg.jpg' | relative_url }}" alt="Ay David"
+                        class="h-full w-full rounded-xl object-cover" />
+                </span>
+                <span class="text-lg text-white/70 space-grotesk font-semibold tracking-tight">
+                    Ay David
+                </span>
+            </a>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="{{ '/' | relative_url }}" class="text-base text-white/70 hover:text-white transition">Home</a>
+                <a href="{{ '/' | relative_url }}#projects"
+                    class="text-base text-white/70 hover:text-white transition">Projects</a>
+                <a href="{{ '/insights/' | relative_url }}"
+                    class="text-base text-white/70 hover:text-white transition">Insights</a>
+                <a href="{{ '/' | relative_url }}#about"
+                    class="text-base text-white/70 hover:text-white transition">About</a>
+            </div>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="{{ '/' | relative_url }}#contact"
+                    class="rounded-xl border border-white/10 px-4 py-2 text-base font-medium text-white hover:bg-white/5 transition">
+                    Contact Me
+                </a>
+                <a href="{{ '/' | relative_url }}#projects"
+                    class="rounded-xl bg-white px-4 py-2 text-base font-medium text-black hover:opacity-90 transition">
+                    View Work
+                </a>
+            </div>
+
+            <!-- Mobile button -->
+            <button id="menuBtn"
+                class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5"
+                type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span id="menuIcon" class="text-xl leading-none text-white/70">☰</span>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden mt-4 rounded-2xl border border-white/10 bg-neutral-950/80 backdrop-blur p-4">
+            <div class="flex flex-col gap-2">
+                <a href="{{ '/' | relative_url }}#top"
+                    class="mobile-link rounded-xl px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white transition">Home</a>
+                <a href="{{ '/' | relative_url }}#projects"
+                    class="mobile-link rounded-xl px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white transition">Projects</a>
+                <a href="{{ '/' | relative_url }}#insights"
+                    class="mobile-link rounded-xl px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white transition">Insights</a>
+                <a href="{{ '/' | relative_url }}#about"
+                    class="mobile-link rounded-xl px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white transition">About</a>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-3">
+                <a href="{{ '/' | relative_url }}#contact"
+                    class="mobile-link rounded-xl border border-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/5 transition text-center">
+                    Contact Me
+                </a>
+                <a href="{{ '/' | relative_url }}#projects"
+                    class="mobile-link rounded-xl bg-white px-4 py-2 text-sm font-medium text-black hover:opacity-90 transition text-center">
+                    View Work
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,19 @@
+{
+  "name": "aydavid-jekyll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw:build": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/tailwind.css --minify",
+    "tw:watch": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}

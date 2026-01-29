@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url("../fonts/GeneralSans_Complete/css/general-sans.css");
+@import "tailwindcss";
+
+html {
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* COLORS */
+    --deep-black: #0a0a0f;
+    --dark-blue: #16161e;
+    --primary-blue: #5c7cfa;
+    --accent-yellow: #facc15;
+    --text-primary: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border-col: #494b4d;
+
+    /* FONTS */
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-general-sans: 'GeneralSans-Regular', sans-serif;
+}
+
+body {
+    box-sizing: border-box !important;
+    width: 100%;
+    overflow-x: hidden !important;
+    background: radial-gradient(900px 520px at 15% 10%, rgba(92, 124, 250, .12), transparent 55%),
+        radial-gradient(900px 520px at 90% 25%, rgba(250, 204, 21, .10), transparent 55%),
+        linear-gradient(180deg, var(--deep-black), var(--dark-blue));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    font-family: var(--font-space-grotesk);
+}
+
+p,
+span,
+a,
+li,
+input,
+textarea,
+select,
+option {
+    font-family: var(--font-general-sans);
+}
+
+.space-grotesk {
+    font-family: var(--font-space-grotesk);
+}
+
+.general-sans {
+    font-family: var(--font-general-sans);
+}

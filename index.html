@@ -1,0 +1,80 @@
+---
+layout: default
+title: Home
+---
+
+<main class="min-h-screen">
+    {% include home-hero.html %}
+
+    <section id="insights" class="pt-12 pb-16">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white/90">Insights</h2>
+                    <p class="mt-2 text-white/60">Latest thoughts, lessons, and actionable notes.</p>
+                </div>
+
+                <a href="{{ '/insights/' | relative_url }}"
+                    class="hidden sm:inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/7 hover:text-white transition">
+                    View all <span aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {% for post in site.posts limit:3 %}
+                {% assign cat = post.categories | first | default: "General" %}
+                {% assign words = post.content | strip_html | number_of_words %}
+                {% assign minutes = words | divided_by: 200 %}
+                {% if minutes < 1 %}{% assign minutes=1 %}{% endif %} <article
+                    class="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 hover:bg-white/7 transition">
+                    <a href="{{ post.url | relative_url }}" class="block">
+                        {% if post.image %}
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy"
+                            class="h-44 w-full object-cover" />
+                        {% else %}
+                        <div class="h-44 w-full bg-gradient-to-br from-white/10 to-transparent"></div>
+                        {% endif %}
+                    </a>
+
+                    <div class="p-4">
+                        <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-white/60">
+                            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">{{ cat }}</span>
+                            <span class="text-white/30">•</span>
+                            <time datetime="{{ post.date | date_to_xmlschema }}">
+                                {{ post.date | date: "%b %d, %Y" }}
+                            </time>
+                            <span class="text-white/30">•</span>
+                            <span>{{ minutes }} min read</span>
+                        </div>
+
+                        <h3 class="text-lg font-bold leading-snug text-white/90 group-hover:text-white transition">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h3>
+
+                        <p class="mt-2 text-sm text-white/60 leading-relaxed">
+                            {{ post.excerpt | strip_html | truncatewords: 18 }}
+                        </p>
+
+                        <a href="{{ post.url | relative_url }}"
+                            class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white">
+                            Read <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    </article>
+                    {% endfor %}
+            </div>
+
+            <!-- Mobile "View all" -->
+            <!-- <div class="mt-8 sm:hidden">
+                <a href="{{ '/insights/' | relative_url }}"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:bg-white/7 hover:text-white transition">
+                    View all insights <span aria-hidden="true">→</span>
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+    {% include projects-section.html %}
+    {% include about-section.html %}
+    {% include contact-section.html %}
+</main>

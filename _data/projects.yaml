@@ -1,0 +1,26 @@
+- name: "GemPortfolio.online"
+  href: "https://gemportfolio.online"
+  description: "A one-page portfolio web solution built to help creators and professionals have a solid online presence."
+  tags:
+    - "Web Design"
+    - "Web Development"
+    - "Web Solutions for Creators"
+  image: "/assets/img/projects/gemportfolio.png"
+
+- name: "theoreoluwadavid.com"
+  href: "https://theoreoluwadavid.com"
+  description: "A music brand website built to preview songs, and stream music."
+  tags:
+    - "Web Design"
+    - "Web Development"
+    - "WordPress Development"
+  image: "/assets/img/projects/theoreoluwadavid.png"
+
+- name: "logiff.org"
+  href: "https://logiff.org"
+  description: "A nonprofit website focused on mission, programs, and community impact with clear calls-to-action."
+  tags:
+    - "Nonprofit"
+    - "Web Design"
+    - "Wordpress"
+  image: "/assets/img/projects/logiff.png"
