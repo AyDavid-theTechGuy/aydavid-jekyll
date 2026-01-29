@@ -22,8 +22,8 @@ title: Ay David
 email: aydavidfjc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Faith, tech, and growth — helping young minds burn for Jesus, and building web solutions that empower people and businesses to scale smarter.
-baseurl: "" # https://aydavid.com/insights
-url: "" # https://aydavid.com
+url: "https://aydavid-thetechguy.github.io"
+baseurl: "/aydavid-jekyll" # https://aydavid.com/insights
 permalink: /insights/:title/
 
 phone_e164: "2348084634310" # no +
