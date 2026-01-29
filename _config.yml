@@ -21,7 +21,7 @@
 title: Ay David
 email: aydavidfjc@gmail.com
 description: Faith, tech, and growth — helping young minds burn for Jesus, and building web solutions that empower people and businesses to scale smarter.
-default_og_image: https://www.aydavid.com/assets/img/aydavid_navimg.jpg
+default_og_image: /assets/img/aydavid_navimg.jpg
 url: "https://aydavid.com"
 baseurl: ""
 permalink: /insights/:title/
