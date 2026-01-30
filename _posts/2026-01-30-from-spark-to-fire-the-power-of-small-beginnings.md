@@ -21,5 +21,5 @@ This is how growth happens. One thing I’ve discovered is that growth isn’t s
 
 Friend, I want you to take this with you: pick a life-improving habit, no matter how small, and follow it through until you become consistent. Those little steps are what take you closer to your God-given purpose.
 
-Thank you.
+Thank for reading.
 God bless you. 😁
