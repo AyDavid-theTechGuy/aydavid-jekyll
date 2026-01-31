@@ -49,19 +49,18 @@ layout: default
             {% endfor %}
         </div>
         {% endif %}
+
+        <hr class="opacity-25 my-8" />
+
+        <section id="comments" aria-label="Comments">
+            <h2 class="mb-6">Comments</h2>
+
+            <iframe src="https://comments.aydavid.com/embed?post={{ page.url | relative_url }}"
+                style="width:100%; border:0; min-height:560px;" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Comments"></iframe>
+        </section>
     </div>
 </article>
-
-<hr style="margin: 48px 0; opacity: .25;" />
-
-<section id="comments" aria-label="Comments">
-    <h2 style="margin: 0 0 14px;">Comments</h2>
-
-    <iframe src="https://comments.aydavid.com/embed?post={{ page.url | relative_url }}"
-        style="width:100%; border:0; min-height:560px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Comments"></iframe>
-</section>
-
 
 <style>
     .prose p {
