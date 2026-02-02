@@ -78,6 +78,22 @@
                         </a>
                     </div>
                 </div>
+                <div class="mt-8 space-y-3">
+                    <!-- <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
+                        <p class="text-xs text-white/50">Email</p>
+                        <p class="mt-1 text-sm text-white/85">{{ site.email }}</p>
+                    </div>
+
+                    <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
+                        <p class="text-xs text-white/50">WhatsApp</p>
+                        <p class="mt-1 text-sm text-white/85">+{{ site.phone_e164 }}</p>
+                    </div> -->
+
+                    <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
+                        <p class="text-xs text-white/50">Availability</p>
+                        <p class="mt-1 text-sm text-white/85">Remote • Nigeria</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -86,22 +102,59 @@
             <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
                 <p class="text-sm font-semibold">Contact details</p>
 
-                <div class="mt-4 space-y-3">
-                    <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
-                        <p class="text-xs text-white/50">Email</p>
-                        <p class="mt-1 text-sm text-white/85">{{ site.email }}</p>
+                <script>
+                    window.gemportfolioForm = { formToken: "gp_form_a8f4d0e7ee0071387ff47fdd4cf06cdb4854d77207375e55" };
+                </script>
+                <script async src="https://dashboard.gemportfolio.online/embed/form-handler.js"></script>
+
+                <form data-gp-form class="mt-6 space-y-4">
+                    <!-- Name -->
+                    <div class="space-y-2">
+                        <label class="text-xs text-white/60">Full Name</label>
+                        <input
+                            name="name"
+                            type="text"
+                            placeholder="John Doe"
+                            class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-blue-400/50 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/30"
+                            required
+                        />
                     </div>
 
-                    <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
-                        <p class="text-xs text-white/50">WhatsApp</p>
-                        <p class="mt-1 text-sm text-white/85">+{{ site.phone_e164 }}</p>
+                    <!-- Email -->
+                    <div class="space-y-2">
+                        <label class="text-xs text-white/60">Email</label>
+                        <input
+                            name="email"
+                            type="email"
+                            placeholder="you@email.com"
+                            class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-blue-400/50 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/30"
+                            required
+                        />
                     </div>
 
-                    <div class="rounded-2xl border border-white/10 bg-neutral-950/30 px-4 py-3">
-                        <p class="text-xs text-white/50">Availability</p>
-                        <p class="mt-1 text-sm text-white/85">Remote • Nigeria</p>
+                    <!-- Message -->
+                    <div class="space-y-2">
+                        <label class="text-xs text-white/60">Message</label>
+                        <textarea
+                            name="message"
+                            rows="4"
+                            placeholder="Tell me about your project..."
+                            class="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-blue-400/50 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/30"
+                            required
+                        ></textarea>
                     </div>
-                </div>
+
+                    <!-- Honeypot -->
+                    <input name="company" class="hidden" tabindex="-1" autocomplete="off" />
+
+                    <!-- Button -->
+                    <button
+                        type="submit"
+                        class="w-full rounded-xl bg-blue-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition hover:scale-[1.02] hover:opacity-95 active:scale-95"
+                    >
+                        Send Message
+                    </button>
+                </form>
 
                 <div class="mt-6">
                     <p class="text-xs text-white/50">

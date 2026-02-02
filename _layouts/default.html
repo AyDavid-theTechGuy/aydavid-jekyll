@@ -16,6 +16,8 @@
 
     <!-- Tailwind compiled CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url }}" />
+    <!-- Testing -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
@@ -33,6 +35,17 @@
     {% include navbar.html %}
 
     {{ content }}
+
+    <!-- EMAIL COLLECTOR -->
+    <!-- <form data-gp-subscribe class="bg-amber-500/50 p-6 rounded-lg max-w-md mx-auto my-12 flex flex-col gap-4">
+        <input name="name" placeholder="Your name" class="" />
+        <input name="email" type="email" placeholder="Email address" class="" required />
+        <button type="submit">Subscribe</button>
+    </form>
+    <script>
+        window.gemportfolio = { siteToken: "gp_pub_94de9c0f1b7b25ae7ac8c536dba4d9694880b8c3d4b2366dc00e3c2644da5349" };
+    </script>
+    <script async src="https://dashboard.gemportfolio.online/embed/email-collector.js"></script> -->
 
     {% include footer.html %}
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
